@@ -19,6 +19,11 @@ public class RealNumber{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
+    if (value == 0){
+      other = 0;
+    }
+    double percent = .00001;
+
     return true;
   }
 
@@ -29,6 +34,7 @@ public class RealNumber{
   public RealNumber add(RealNumber other){
      //other can be ANY RealNumber, including a RationalNumber
      //or other subclasses of RealNumber (that aren't written yet)
+     value = value + other;
      return null;
   }
 
