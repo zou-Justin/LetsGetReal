@@ -4,6 +4,7 @@ public class RationalNumber extends RealNumber
 
   /**Initialize the RationalNumber with the provided values
   *  if the denominator is 0, make the fraction 0/1 instead
+  *  If the denominator is negative, negate both numerator and denominator
   *@param nume the numerator
   *@param deno the denominator
   */
