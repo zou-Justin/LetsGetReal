@@ -14,6 +14,10 @@ public class RationalNumber extends RealNumber
       numerator = 0;
       denominator = 1;
     }
+    if (deno < 0){
+      numerator = nume * -1;
+      denominator = deno;
+    }
     numerator = nume;
     denominator = deno;
   }
