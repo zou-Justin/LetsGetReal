@@ -23,8 +23,9 @@ public class RealNumber{
       other = 0;
     }
     double percent = .00001;
-
-    return true;
+    if ()(Math.abs(value-other)/ Math.max(value,other)) <percent){
+      return true;
+    }
   }
 
   /*
