@@ -23,7 +23,7 @@ public class RealNumber{
       other = 0;
     }
     double percent = .00001;
-    if ()(Math.abs(value-other)/ Math.max(value,other)) <percent){
+    if ()(Math.abs(value-other)/ Math.max(value,other)) < percent){
       return true;
     }
   }
@@ -53,7 +53,8 @@ public class RealNumber{
   *this divided by the other
   */
   public RealNumber divide(RealNumber other){
-        return null;
+    value = value/other;
+    return null;
   }
 
   /*
