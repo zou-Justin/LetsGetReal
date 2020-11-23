@@ -14,7 +14,7 @@ public class RationalNumber extends RealNumber
       numerator = 0;
       denominator = 1;
     }
-    else if (deno < 0){
+    if (deno < 0){
       numerator = nume * -1;
       denominator = deno * -1;
       reduce();
@@ -116,14 +116,14 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    RationalNumber b = new RationalNumber(other.getNumerator() * denominator + numerator * other.getDenominator(),other.getDenominator() * denominator) ;
+    RationalNumber b = new RationalNumber(other.getNumerator() * denominator + numerator * other.getDenominator(),other.getDenominator() * denominator);
     return b;
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    RationalNumber c = new RationalNumber(numerator * other.getDenominator() - other.getNumerator() * denominator,other.getDenominator() * denominator) ;
+    RationalNumber c = new RationalNumber(other.getDenominator() * numerator - denominator * other.getNumerator(),other.getDenominator() * denominator);
     return c;
   }
 }
