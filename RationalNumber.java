@@ -94,7 +94,7 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-    int GCD1 = gcd(numerator,denominator);
+    int GCD1 = gcd(Math.abs(numerator),Math.abs(denominator));
     numerator = numerator / GCD1;
     denominator = denominator / GCD1;
   }
