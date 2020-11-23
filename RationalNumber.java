@@ -17,6 +17,7 @@ public class RationalNumber extends RealNumber
     if (deno < 0){
       numerator = nume * -1;
       denominator = deno * -1;
+      reduce();
     }
     else{
     numerator = nume;
@@ -46,8 +47,7 @@ public class RationalNumber extends RealNumber
   *and denominator as this RationalNumber but reversed.
   */
   public RationalNumber reciprocal(){
-    a = RationalNumber(denominator,numerator);
-    return a;
+    return new RationalNumber(denominator,numerator);
   }
   /**
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
@@ -73,8 +73,6 @@ public class RationalNumber extends RealNumber
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
     int largest = 0;
     for (int i = 1; i < Math.min(a,b);i++){
       if (i > largest){
@@ -83,7 +81,7 @@ public class RationalNumber extends RealNumber
         }
       }
     }
-    return i;
+    return largest;
   }
 
   /**
@@ -100,9 +98,7 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-
-    RationalNumber a = new RationalNumber(other.getNumerator() * numerator,other.getDenominator() * denominator) ;
-    return a;
+    return new RationalNumber(other.getNumerator() * numerator,other.getDenominator() * denominator) ;
   }
 
   /**
