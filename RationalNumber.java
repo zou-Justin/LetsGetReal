@@ -54,7 +54,12 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return numerator == other.getNumerator() && denominator == other.getDenominator();
+    if (numerator == other.getNumerator() && denominator == other.getDenominator()){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 
@@ -96,7 +101,6 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber multiply(RationalNumber other){
     RationalNumber e = new RationalNumber(other.getNumerator() * numerator,other.getDenominator() * denominator) ;
-    reduce();
     return e;
   }
 
@@ -104,7 +108,6 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    reduce();
     RationalNumber a = new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator);
     return a;
   }
@@ -114,7 +117,6 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber add(RationalNumber other){
     RationalNumber b = new RationalNumber(other.getNumerator() * denominator + numerator * other.getDenominator(),other.getDenominator() * denominator) ;
-    reduce();
     return b;
   }
   /**
@@ -122,7 +124,6 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber subtract(RationalNumber other){
     RationalNumber c = new RationalNumber(numerator * other.getDenominator() - other.getNumerator() * denominator,other.getDenominator() * denominator) ;
-    reduce();
     return c;
   }
 }
