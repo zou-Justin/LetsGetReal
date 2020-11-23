@@ -100,26 +100,30 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-    return (other.getNumerator() * numerator) / (other.getDenominator() * denominator);
+
+    RationalNumber a = new RationalNumber(other.getNumerator() * numerator,other.getDenominator() * denominator) ;
+    return a;
   }
 
   /**
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return multiply(other.reciprocal);
+    RationalNumber a = new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator) ;
+    return a;
   }
 
   /**
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return other.getValue() + getValue();
+    RationalNumber a = new RationalNumber(other.getNumerator() * denominator + numerator * other.getDenominator(),other.getDenominator() * denominator) ;
+    return a;
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return getValue() -  other.getValue();
+    return getValue() -  other.getValue;
   }
 }
