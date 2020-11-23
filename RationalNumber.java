@@ -71,7 +71,7 @@ public class RationalNumber extends RealNumber
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
-    int largest = 0;
+    int largest = 1;
     for (int i = 1; i < Math.min(a,b);i++){
       if (i > largest){
         if (a % i == 0 && b % i == 0){
@@ -98,6 +98,7 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber multiply(RationalNumber other){
     RationalNumber e = new RationalNumber(other.getNumerator() * numerator,other.getDenominator() * denominator) ;
+    reduce();
     return e;
   }
 
@@ -105,7 +106,9 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator) ;
+    RationalNumber a = new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator);
+    reduce();
+    return a;
   }
 
   /**
@@ -113,6 +116,7 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber add(RationalNumber other){
     RationalNumber b = new RationalNumber(other.getNumerator() * denominator + numerator * other.getDenominator(),other.getDenominator() * denominator) ;
+    reduce();
     return b;
   }
   /**
@@ -120,6 +124,7 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber subtract(RationalNumber other){
     RationalNumber c = new RationalNumber(numerator * other.getDenominator() - other.getNumerator() * denominator,other.getDenominator() * denominator) ;
+    reduce();
     return c;
   }
 }
