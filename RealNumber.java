@@ -19,12 +19,11 @@ public class RealNumber{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
-    if (other.getValue() == 0){
-      value = 0;
+    if (other.getValue() == 0 && value == 0){
       return true;
     }
     double percent = .00001;
-    if (Math.abs(value - other.getValue())/ value <= percent)  {
+    if (Math.abs(value - other.getValue())/ Math.abs(value) <= percent)  {
       return true;
     }
     return false;
