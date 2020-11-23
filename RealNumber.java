@@ -20,12 +20,14 @@ public class RealNumber{
   */
   public boolean equals(RealNumber other){
     if (value == 0){
-      other = 0;
-    }
-    double percent = .00001;
-    if ((Math.abs(value - other.getValue())/ Math.max(value,other.getValue())) < percent)  {
+      other.value = 0;
       return true;
     }
+    double percent = .00001;
+    if (Math.abs(value - other.getValue())/ value <= percent)  {
+      return true;
+    }
+    return false;
   }
 
   /*
@@ -35,7 +37,7 @@ public class RealNumber{
   public RealNumber add(RealNumber other){
      //other can be ANY RealNumber, including a RationalNumber
      //or other subclasses of RealNumber (that aren't written yet)
-     a = new RealNumber(value + other.getValue())
+     RealNumber a = new RealNumber(value + other.getValue());
      return a;
   }
 
@@ -44,7 +46,7 @@ public class RealNumber{
   *the product of this and the other
   */
   public RealNumber multiply(RealNumber other){
-    a = new RealNumber(value * other.getValue())
+    RealNumber a = new RealNumber(value * other.getValue());
     return a;
   }
 
@@ -53,7 +55,7 @@ public class RealNumber{
   *this divided by the other
   */
   public RealNumber divide(RealNumber other){
-    a = new RealNumber(value / other.getValue())
+     RealNumber a = new RealNumber(value / other.getValue());
     return a;
   }
 
@@ -62,7 +64,7 @@ public class RealNumber{
   *this minus the other
   */
   public RealNumber subtract(RealNumber other){
-    a = new RealNumber(value - other.getValue())
+     RealNumber a = new RealNumber(value - other.getValue());
     return a;
   }
 }
