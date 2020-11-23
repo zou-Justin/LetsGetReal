@@ -54,7 +54,7 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return (numerator == other.getNumerator() && denominator == other.getDenominator());
+    return numerator == other.getNumerator() && denominator == other.getDenominator();
   }
 
 
@@ -72,13 +72,11 @@ public class RationalNumber extends RealNumber
   */
   private static int gcd(int a, int b){
     int largest = 1;
-    for (int i = 1; i < Math.min(a,b);i++){
-      if (i > largest){
+    for (int i = 1; i <= Math.min(a,b);i++){
         if (a % i == 0 && b % i == 0){
           largest = i;
         }
       }
-    }
     return largest;
   }
 
@@ -88,9 +86,9 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-    int RealGCD = gcd(numerator,denominator);
-    numerator = numerator / RealGCD;
-    denominator = denominator / RealGCD;
+    int GCD1 = gcd(numerator,denominator);
+    numerator = numerator / GCD1;
+    denominator = denominator / GCD1;
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
@@ -106,8 +104,8 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    RationalNumber a = new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator);
     reduce();
+    RationalNumber a = new RationalNumber(other.getDenominator() * numerator,other.getNumerator() * denominator);
     return a;
   }
 
