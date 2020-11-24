@@ -70,6 +70,9 @@ public class RationalNumber extends RealNumber
     if (denominator == 1 && numerator != 0){
       return numerator+"";
     }
+    if (numerator == 0){
+      return "0";
+    }
     return (numerator + "/" + denominator);
   }
 
