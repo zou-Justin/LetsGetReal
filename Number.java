@@ -15,5 +15,12 @@ public abstract class Number{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(Number other){
-    //TO BE IMPLEMENTED  }
+    if (other.getValue() == 0 && getValue() == 0){
+      return true;
+    }
+    double percent = .00001;
+    if (Math.abs(getValue() - other.getValue())/ Math.abs(getValue()) <= percent)  {
+      return true;
+    }
+    return false;
 }
