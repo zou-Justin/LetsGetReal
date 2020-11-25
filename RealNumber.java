@@ -1,5 +1,4 @@
-public class RealNumber extends Number
-{
+public class RealNumber extends Number{
   private double value;
 
   public RealNumber(double v){
@@ -19,7 +18,8 @@ public class RealNumber extends Number
   *Return true when the values are within 0.001% of eachother.
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
-  
+
+
   /*
   *Return a new RealNumber that has the value of:
   *the sum of this and the other

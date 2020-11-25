@@ -23,4 +23,5 @@ public abstract class Number{
       return true;
     }
     return false;
+  }
 }
